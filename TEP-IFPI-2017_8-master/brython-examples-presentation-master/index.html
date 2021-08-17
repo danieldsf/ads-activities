@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Brython - Flask</title>
+		<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<script type="text/javascript" src="node_modules/brython/brython.js"></script>
+		<script type="text/javascript" src="node_modules/brython/brython_stdlib.js"></script>
+		<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	</head>
+	<body onload="brython()">
+		<div class="container">
+			<div class="row text-center">
+				<h1>Notas</h1>
+
+				<div class="form-group">
+				  <label for="usr">Pesquisar:</label>
+				  <input type="text" class="form-control" id="query">
+				</div>
+			</div>
+
+			<div class="row">
+				<table class="table table-bordered">
+				    <thead>
+				      <tr>
+				        <th>#</th>
+				        <th>Nome</th>
+				        <th>Ação</th>
+				      </tr>
+				    </thead>
+				    <tbody id="corpo">
+				    </tbody>
+				  </table>
+			</div>
+			<div class="row">
+				<div class="form-group">
+				  <label for="usr">Name:</label>
+				  <input type="text" class="form-control" id="name">
+				</div>
+
+				<p><button id="save" class="btn btn-primary">Salvar</button></p>
+				<p><button id="revert" class="btn btn-primary">Inverter String</button></p>
+				<p id="quebrar"></p>
+			</div>
+		</div>
+		
+		<script type="text/python" src="frontend.py"></script>
+	</body>
+</html>	

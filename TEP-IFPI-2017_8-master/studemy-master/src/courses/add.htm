@@ -1,0 +1,96 @@
+<div>
+    <nav class="navbar navbar-inverse" ng-if="user.who_is == 'TE'">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">Studemy</a>
+            </div>
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#!/dashboard">Cursos</a></li>
+            <li><a href="#!/discounts">Descontos</a></li>
+            <li><a href="#!/users">Usuários</a></li>
+            <li><a href="#" ng-click="logout()">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-inverse" ng-else>
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#!/my-courses">Studemy</a>
+            </div>
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="#!/my-courses">Home</a></li>
+            <li><a href="#!/my-courses">Cursos Comprados</a></li>
+            <li><a href="#!/">Todos os cursos</a></li>
+            <li><a href="#" ng-click="logout()">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--BODY-->
+    <div class="container">
+        <div class="row text-center">
+            <h1>Bem vindo, {{user.username}}</h1>
+            <h2>Lista dos descontos criados por você</h2>
+        </div>
+        <div class="row">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in cursos">
+                        <td>{{ x.name }}</td>
+                        <td>{{ x.price | currency }}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal" ng-click="select(x.id)">Editar</button>
+                            <button type="button" class="btn btn-danger" ng-click="delete(x.id)">Deletar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" ng-click="add()">Adicionar Curso</button>
+        </div>
+        
+        <hr>
+
+        <div class="row">
+            
+
+            <!-- Modal -->
+            <form class="form-horizontal" method="post" action="#">
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">Nome do Curso</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" ng-model="curso.name" name="curso.name" id="curso.name"  placeholder="Nome do Curso" required/>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">Preço</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" ng-model="curso.price" name="curso.price" id="curso.price"  placeholder="Preço do Curso" required/>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form-group ">
+                    <button type="button" ng-click="save()" class="btn btn-primary btn-lg btn-block login-button">Salvar</button>
+                </div>
+            </form> 
+            <!--MODAL-->
+        </div>
+
+    </div>
+</div>

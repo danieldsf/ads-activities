@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pratica VueJS</title>
+</head>
+<body>
+	<div id="app">
+	  <span>Olá, {{nome}}</span><br>
+	  <input type="text" name="nome" v-model="nome">
+	</div>
+	<!--
+		Crie um app que apresente uma saudação do tipo “Bom dia, João”, onde a
+		primeira parte da saudação (bom dia, olá, boa noite) é lida de uma caixa de
+		texto, o nome do saudado de outra caixa de texto e é exibido o texto
+		concatenado em um span.
+	-->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.0/dist/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+		  el: "#app",
+		  data: {
+		  	nome: "",
+		  },
+		})
+	</script>
+</body>
+</html>

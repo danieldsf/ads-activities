@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pratica VueJS</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" name="limite" v-model="limite">	  	
+		<button @click="processar">Gerar Lista</button>
+		<span v-if="limite > 0">{{output}}</span>
+	</div>
+	<!--
+		Em uma caixa de texto leia um número e ao clicar em um botão exiba em uma
+		lista os números pares entre 0 e esse número.
+	-->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.1.0/dist/vue.js"></script>
+
+	<script type="text/javascript">
+		new Vue({
+		  el: "#app",
+		  data: {
+		  	limite: 0,
+		  	output: "",
+		  },
+		  methods: {
+		  	processar: function(){
+		  		this.output = "0";
+		  		for (var i = 2; i < this.limite; i += 2){
+		  			this.output += ", " + i;
+		  		}
+		    }
+		  }
+		})
+	</script>
+</body>
+</html>

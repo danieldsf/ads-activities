@@ -1,0 +1,1 @@
+Array.from(new Array(26), (x,i) => Array.from(new Array(100), (j,m) => console.log(`${i}-${m}`)));

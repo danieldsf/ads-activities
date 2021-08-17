@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pratica VueJS</title>
+</head>
+<body>
+	<div id="app">
+	  <input type="text" name="categoria" v-model="categoria">
+	  <span v-if="categoria == 'A'">Você pode dirigir moto.</span>
+	  <span v-else-if="categoria == 'B'">Você pode dirigir carro.</span>
+	  <span v-else-if="categoria == 'D'">Você pode dirigir carro e caminhão.</span>
+	</div>
+	<!--
+		Crie uma app que tenha uma caixa de texto e um span. Na caixa de texto deve
+		ser digitada a categoria da carteira de motorista. No spam deve aparecer uma
+		das seguintes mensagens:
+			• “Você pode dirigir moto.”, caso a caixa de texto tenha valor A;
+			• “Você pode dirigir carro”, caso a caixa de texto tenha valor B;
+			• “Você pode dirigir carro e caminhão”, caso a a caixa tenha valor D;
+		Veja o exemplo do link abaixo para usar como base para essa questão:
+		https://br.vuejs.org/v2/guide/conditional.html#v-else-if
+	-->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.1.0/dist/vue.js"></script>
+	<script type="text/javascript">
+		new Vue({
+		  el: "#app",
+		  data: {
+		  	categoria: "",
+		  },
+		})
+	</script>
+</body>
+</html>

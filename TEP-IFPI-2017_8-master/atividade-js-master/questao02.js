@@ -1,0 +1,1 @@
+var getName = (number) => isNaN(number) ? "Pegadinha do malandro" : (number > 4 ? "this is a large group" : (number < 1 ? "not a group" : ["solo", "duet", "trio", "quartet"][number - 1]));

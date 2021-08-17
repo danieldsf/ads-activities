@@ -1,0 +1,17 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+<head lang="{{ LANGUAGE_CODE }}">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Base App</title>
+	<link rel="stylesheet" href="{% static 'materialize-css/dist/css/materialize.min.css' %}">
+</head>
+<body>
+	{% block content %}
+	<h1>Hello</h1>
+	{% endblock %}
+</body>
+</html>

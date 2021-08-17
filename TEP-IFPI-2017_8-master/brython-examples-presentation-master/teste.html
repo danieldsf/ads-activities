@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<script src="node_modules/brython/brython.js"></script>
+</head>
+
+<body onload="brython()">
+    <span id="myzone" style="color: rgb(204, 204, 136);
+		background-color: gray;
+		font-weight: bold;
+		font-size: 50px;
+		padding: 20px"
+		class="zone">
+			Texto</span>
+    <button id="button1">Mudar</button>
+
+    <script type="text/python" id="script">
+    from browser import document
+
+    element = document["myzone"]
+
+    def change(event):
+        style = element.style
+        color = style.color
+        style.color = "#cc8" if color == "blue" else "blue"
+        style.backgroundColor = "gray" if color == "blue" else "#aad"
+        style.fontWeight = "bold" if color == "blue" else "normal"
+        style.fontSize = "50px" if color == "blue" else "100px"
+
+    document["button1"].bind("click", change)
+
+    </script>
+</body>
+
+</html>

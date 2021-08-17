@@ -1,0 +1,7 @@
+*.pyc
+.env
+node_modules/
+.idea/
+.phpintel/
+static/*
+environment/

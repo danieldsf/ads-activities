@@ -1,0 +1,13 @@
+<div class="container">
+        <div class="row">
+            <h1>Lista de Todos os cursos</h1>
+    
+            <ul class="list-group" ng-repeat="x in cursos">
+                <li class="list-group-item">
+                    {{ x.name }} - {{ x.price }}  &nbsp;
+                    <button class="btn btn-primary" ng-if="user" ng-click="buy(x.id)">Comprar</button>
+    
+                </li>
+            </ul>
+        </div>
+    </div>

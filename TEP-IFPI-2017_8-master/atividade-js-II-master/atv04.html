@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue">
+    </script>
+</head>
+<body>
+    <div id="app">
+        <p>Votes: {{votes}}</p>
+        <button v-on:click = "upvote">Vote</button>  
+        <button v-on:click = "downvote">Unvote</button>  
+        <button v-on:click = "stakezero">Reset</button>  
+    </div>
+    <!--
+    	Altere o código do exemplo feito em classe para que exista, além do botão de
+		incrementar os votos, um botão para decrementar os votos e outro para zerar
+		os votos.
+   	-->
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            data: {
+                votes : 0
+            },
+            methods : {
+                upvote : function() {
+                    this.votes++
+                },
+                downvote : function() {
+                    this.votes--
+                },
+                stakezero: function(){
+                	this.votes = 0
+                }
+            }
+        });
+    </script>
+</body>
+</html>
